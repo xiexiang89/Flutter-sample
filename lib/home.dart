@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_sample/native_api.dart';
 
 ///首页
 class HomePage extends StatefulWidget {
@@ -23,9 +24,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
   var methodChannel = MethodChannel("nativeApi");
+  final nativeApi = NativeApi.instance;
 
   void _incrementCounter() {
-    methodChannel.invokeMethod("log",["xiexiang","name"]);
+    nativeApi.getPhoneModel().then((result) => this.handleResult(result));
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -34,6 +36,10 @@ class _HomePageState extends State<HomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+  }
+
+  void handleResult(String model) {
+    print('model $model');
   }
 
   @override
