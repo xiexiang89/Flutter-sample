@@ -29,11 +29,13 @@ public class FlutterApis implements MethodChannel.MethodCallHandler {
         }
     }
 
-    private WeakReference<BinaryMessenger> mBinaryMessengerRef;
+    private final WeakReference<BinaryMessenger> mBinaryMessengerRef;
+    private final MethodChannel mMethodChannel;
 
     private FlutterApis(BinaryMessenger messenger) {
-        mBinaryMessengerRef = new WeakReference<BinaryMessenger>(messenger);
-        new MethodChannel(messenger,API_NAME).setMethodCallHandler(this);
+        mBinaryMessengerRef = new WeakReference<>(messenger);
+        mMethodChannel = new MethodChannel(messenger, API_NAME);
+        mMethodChannel.setMethodCallHandler(this);
     }
 
     @Override
