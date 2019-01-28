@@ -5,9 +5,8 @@ class NativeApi {
 
   static const String _METHOD_CHANNEL = 'native_api';
   static NativeApi _instance;
-  static NativeApi get instance => _getInstance();
 
-  static NativeApi _getInstance() {
+  static NativeApi getInstance() {
     if (_instance == null) {
       _instance = NativeApi._();
     }

@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
   var methodChannel = MethodChannel("nativeApi");
-  final nativeApi = NativeApi.instance;
+  final nativeApi = NativeApi.getInstance();
 
   void _incrementCounter() {
     nativeApi.getPhoneModel().then((result) => this.handleResult(result));
