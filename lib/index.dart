@@ -60,7 +60,7 @@ class _IndexListItemView extends Container {
       onTap: () => this._handleOnTapItem(item),
       child: Container(height: 50, alignment: Alignment.centerLeft,
           padding: EdgeInsets.all(10),
-          child: Text(item.title, style: TextStyle(inherit: true, fontSize: 20)))
+          child: Row(children: <Widget>[Image.asset('assets/images/ic_card_type_common.png',height: 30, fit: BoxFit.cover)]))
     );
   }
 
