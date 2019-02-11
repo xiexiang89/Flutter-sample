@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample/edit_sample.dart';
 import 'package:flutter_sample/home.dart';
 import 'package:flutter_sample/index.dart';
+import 'package:flutter_sample/routes/routes.dart';
 
 class FlutterApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +22,8 @@ class FlutterApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: EditSamplePage(),
+      home: IndexPage(title: 'Fultter index page',),
+      routes: Routes.getRoutes(),
     );
   }
 }

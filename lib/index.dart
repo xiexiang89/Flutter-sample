@@ -57,7 +57,7 @@ class _IndexListItemView extends Container {
   Widget build(BuildContext context) {
     //ink well 是水波纹效果的组件
     return InkWell(
-      onTap: () => this._handleOnTapItem(item),
+      onTap: () => this._handleOnTapItem(context, item),
       child: Container(alignment: Alignment.centerLeft,
           padding: EdgeInsets.only(left: 10,top: 15,right: 15,bottom: 20),
           child: Row(children: <Widget>[Image.asset('assets/images/ic_card_type_common.png',height: 30, fit: BoxFit.cover),
@@ -69,12 +69,8 @@ class _IndexListItemView extends Container {
     );
   }
 
-  void _handleOnTapItem(_IndexItem item) {
-    Fluttertoast.showToast(
-        msg: '这是一个Toast:${item.title}',
-        toastLength: Toast.LENGTH_SHORT,
-        fontSize: 10.0
-    );
+  void _handleOnTapItem(BuildContext context, _IndexItem item) {
+    Navigator.pushNamed(context, '/input_page');
   }
 }
 
