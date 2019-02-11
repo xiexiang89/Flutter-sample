@@ -1,5 +1,6 @@
 ///Index page
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class IndexPage extends StatefulWidget {
   final String title;
@@ -42,9 +43,7 @@ class _IndexState extends State<IndexPage> {
         ),
         body: ListView.builder(
           itemCount: itemList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return _IndexListItemView(item: itemList[index]);
-          }
+          itemBuilder: (BuildContext context, int index) => _IndexListItemView(item: itemList[index])
         ));
   }
 }
@@ -56,16 +55,26 @@ class _IndexListItemView extends Container {
 
   @override
   Widget build(BuildContext context) {
+    //ink well 是水波纹效果的组件
     return InkWell(
       onTap: () => this._handleOnTapItem(item),
-      child: Container(height: 50, alignment: Alignment.centerLeft,
-          padding: EdgeInsets.all(10),
-          child: Row(children: <Widget>[Image.asset('assets/images/ic_card_type_common.png',height: 30, fit: BoxFit.cover)]))
+      child: Container(alignment: Alignment.centerLeft,
+          padding: EdgeInsets.only(left: 10,top: 15,right: 15,bottom: 20),
+          child: Row(children: <Widget>[Image.asset('assets/images/ic_card_type_common.png',height: 30, fit: BoxFit.cover),
+          Container(padding: EdgeInsets.only(left: 10),
+              child: Column(mainAxisSize: MainAxisSize.min,mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[Text('Title'),Text(item.title)]))
+          ])
+      )
     );
   }
 
   void _handleOnTapItem(_IndexItem item) {
-    print(item.title);
+    Fluttertoast.showToast(
+        msg: '这是一个Toast:${item.title}',
+        toastLength: Toast.LENGTH_SHORT,
+        fontSize: 10.0
+    );
   }
 }
 

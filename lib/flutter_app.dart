@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/edit_sample.dart';
 import 'package:flutter_sample/home.dart';
 import 'package:flutter_sample/index.dart';
 
@@ -20,7 +21,7 @@ class FlutterApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: IndexPage(title: 'Flutter Demo Home Page xiexiang'),
+      home: EditSamplePage(),
     );
   }
 }
