@@ -28,10 +28,6 @@ class Routes {
         widget = IndexPage(title: params['title']);
         break;
     }
-    return widget != null ? Navigator.push(context, _createRoute(context, (BuildContext context) => widget)) : null;
-  }
-
-  static MaterialPageRoute<T> _createRoute<T extends Object>(BuildContext context, WidgetBuilder builder) {
-    return MaterialPageRoute(builder: builder);
+    return widget != null ? Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => widget)) : null;
   }
 }

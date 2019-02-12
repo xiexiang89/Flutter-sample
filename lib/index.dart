@@ -1,7 +1,6 @@
 ///Index page
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/routes/routes.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class IndexPage extends StatefulWidget {
   final String title;
