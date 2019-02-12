@@ -1,5 +1,6 @@
 ///Index page
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/routes/routes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class IndexPage extends StatefulWidget {
@@ -70,7 +71,7 @@ class _IndexListItemView extends Container {
   }
 
   void _handleOnTapItem(BuildContext context, _IndexItem item) {
-    Navigator.pushNamed(context, '/input_page');
+    Routes.push(context, Routes.INDEX_PAGE_NAME, {'title':item.title});
   }
 }
 
