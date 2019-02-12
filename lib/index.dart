@@ -70,7 +70,8 @@ class _IndexListItemView extends Container {
   }
 
   void _handleOnTapItem(BuildContext context, _IndexItem item) {
-    Routes.push(context, Routes.INDEX_PAGE_NAME, {'title':item.title});
+    Routes.pushNamed(context, Routes.CUSTOM_PAINT_NAME);
+//    Routes.push(context, Routes.INDEX_PAGE_NAME, {'title':item.title});
   }
 }
 

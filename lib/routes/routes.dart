@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_sample/edit_sample.dart';
 import 'package:flutter_sample/index.dart';
+import 'package:flutter_sample/widget/custom_paint.dart';
 
 class Routes {
 
   static const String INDEX_PAGE_NAME = '/index_page';
   static const String INPUT_PAGE_NAME = '/input_page';
+  static const String CUSTOM_PAINT_NAME = '/custom_paint';
 
   static final Map<String, WidgetBuilder> _routes = {
-    INPUT_PAGE_NAME: (BuildContext context) => EditSamplePage()
+    INPUT_PAGE_NAME: (BuildContext context) => EditSamplePage(),
+    CUSTOM_PAINT_NAME: (BuildContext context) => MyCustomView()
   };
 
   static Map<String, WidgetBuilder> getRoutes() {
